@@ -55,11 +55,11 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
             className="font-display text-xl md:text-2xl font-bold text-gradient cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
-            &lt;Dev /&gt;
+            naylapm portfolio
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 navbg">
             {navItems.map((item) => (
               <motion.a
                 key={item.label}

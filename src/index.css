@@ -39,9 +39,9 @@
     /* Custom tokens */
     --gradient-primary: linear-gradient(135deg, hsl(175 80% 40%), hsl(200 80% 50%));
     --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 25% 94%) 100%);
-    --shadow-glow: 0 0 40px hsl(175 80% 40% / 0.3);
-    --shadow-card: 0 4px 20px hsl(220 20% 10% / 0.08);
-    --shadow-card-hover: 0 8px 30px hsl(220 20% 10% / 0.12);
+    --navbg: 0 0 40px hsla(223, 76%, 56%, 0.863);
+    --shadow-card: 0 4px 20px hsla(218, 66%, 51%, 0.785);
+    --shadow-card-hover: 0 8px 30px hsla(218, 77%, 27%, 0.888);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -85,8 +85,8 @@
     /* Custom tokens dark */
     --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 60%));
     --gradient-hero: linear-gradient(180deg, hsl(220 25% 6%) 0%, hsl(220 30% 10%) 100%);
-    --shadow-glow: 0 0 60px hsl(175 80% 50% / 0.4);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 60px hsla(175, 70%, 34%, 0.4);
+    --shadow-card: 0 4px 20px hsla(209, 69%, 46%, 0.3);
     --shadow-card-hover: 0 8px 30px hsl(175 80% 50% / 0.15);
 
     --sidebar-background: 220 25% 8%;
@@ -116,9 +116,9 @@
 }
 
 @layer components {
-  .text-gradient {
+  .bg-navbg {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-primary);
+    background-image: var(--navbg);
   }
 
   .bg-gradient-hero {
