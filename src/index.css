@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
 @layer base {
   :root {
@@ -37,12 +37,20 @@
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 40%), hsl(200 80% 50%));
-    --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 25% 94%) 100%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(175 80% 40%),
+      hsl(200 80% 50%)
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(210 20% 98%) 0%,
+      hsl(210 25% 94%) 100%
+    );
     --shadow-glow: 0 0 40px hsla(223, 80%, 40%, 0.71);
     --shadow-card: 0 4px 20px hsla(218, 66%, 51%, 0.785);
     --shadow-card-hover: 0 8px 30px hsla(218, 77%, 27%, 0.888);
-
+    --navbg: linear-gradient(135deg, hsl(50, 100%, 54%), hsl(200 80% 50%));
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -83,9 +91,18 @@
     --ring: 175 80% 50%;
 
     /* Custom tokens dark */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 6%) 0%, hsl(220 30% 10%) 100%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(175 80% 50%),
+      hsl(200 80% 60%)
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(220 25% 6%) 0%,
+      hsl(220 30% 10%) 100%
+    );
     --shadow-glow: 0 0 60px hsla(175, 70%, 34%, 0.4);
+    --navbg: hsl(26, 100%, 50%);
     --shadow-card: 0 4px 20px hsla(209, 69%, 46%, 0.3);
     --shadow-card-hover: 0 8px 30px hsl(175 80% 50% / 0.15);
 
@@ -107,11 +124,16 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
   }
 }
 
@@ -160,7 +182,8 @@
   }
 
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px);
     }
     50% {
@@ -169,7 +192,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
     }
     50% {

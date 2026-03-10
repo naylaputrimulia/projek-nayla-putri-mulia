@@ -44,7 +44,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
         isScrolled ? 'glass-strong shadow-card' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 -navbg">
         <div className="flex items-center justify-between h-16 md:h-20">
           <motion.a
             href="#home"
@@ -59,7 +59,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 navbg">
+          <div className="hidden md:flex items-center gap-8 ">
             {navItems.map((item) => (
               <motion.a
                 key={item.label}
