@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git' },
+    { icon: Github, href: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git', label: 'GitHub' },
     // { icon: Linkedin, href: '#', label: 'LinkedIn' },
     // { icon: Youtube, href: '#', label: 'YouTube' },
     // { icon: Instagram, href: '#', label: 'Instagram' },
@@ -37,7 +37,7 @@ export default function Footer() {
                 key={social.label}
                 href={social.href}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="p-2 rounded-full hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
                 aria-label={social.label}
               >

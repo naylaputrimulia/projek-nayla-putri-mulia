@@ -10,7 +10,12 @@ export default function HeroSection() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+const socialLinks = [
+    { icon: Github, href: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git', label: 'GitHub' },
+    // { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    // { icon: Youtube, href: '#', label: 'YouTube' },
+    // { icon: Instagram, href: '#', label: 'Instagram' },
+];
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Background 3D */}
