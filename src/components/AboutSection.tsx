@@ -38,14 +38,14 @@ export default function AboutSection() {
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                   {/* <span className="text-8xl">👨‍💻ffjm</span> */}
                     <img 
-                src="/public/foto akun.webp" // Ganti dengan path foto kamu di folder public
+                src="/public/foto kedua akun.jpg" // Ganti dengan path foto kamu di folder public
                 alt="Nayla Putri Mulia"
                 className="relative  object-coverborder-4 border-white/10 shadow-2xl"
               />
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
-                <p className="font-display font-bold text-2xl text-gradient">5+ Tahun</p>
+                <p className="font-display font-bold text-2xl text-gradient">2+ bulan</p>
                 <p className="text-sm text-muted-foreground">Pengalaman</p>
               </div>
             </div>
@@ -59,19 +59,14 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <h3 className="font-display text-2xl md:text-3xl font-bold">
-              Passionate Developer &amp; Creator
+              Passionate pelajar 
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Saya adalah seorang Fullstack Web Developer dengan passion yang kuat dalam menciptakan 
-              solusi digital yang inovatif. Dengan pengalaman lebih dari 5 tahun, saya telah 
-              membantu berbagai klien dan perusahaan dalam mewujudkan ide-ide mereka menjadi 
-              aplikasi web yang powerful dan user-friendly.
+              Saya adalah seorang pelajar MAN 1 Banda aceh dengan passion yang kuat dalam menciptakan 
+              solusi digital yang inovatif. Dengan pengalaman lebih dari 2 bulan, saya telah 
+              membantu banyak teman saya yang kesusahan dalam tahap-tahap serta pembuatan coding.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Selain coding, saya juga aktif sebagai Content Creator, berbagi pengetahuan 
-              tentang pemrograman dan teknologi melalui berbagai platform. Saya percaya bahwa 
-              berbagi ilmu adalah cara terbaik untuk terus belajar dan berkembang.
-            </p>
+            
             <div className="grid grid-cols-2 gap-4 pt-4">
               {stats.map((stat, index) => (
                 <motion.div
