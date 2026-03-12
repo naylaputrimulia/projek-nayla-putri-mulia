@@ -36,7 +36,12 @@ export default function AboutSection() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card">
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-8xl">👨‍💻</span>
+                  {/* <span className="text-8xl">👨‍💻ffjm</span> */}
+                    <img 
+                src="/public/foto akun.webp" // Ganti dengan path foto kamu di folder public
+                alt="Nayla Putri Mulia"
+                className="relative  object-coverborder-4 border-white/10 shadow-2xl"
+              />
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">

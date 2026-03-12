@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Loader2 } from 'lucide-react';
@@ -19,19 +20,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@developer.com',
-    href: 'mailto:hello@developer.com',
+    value: 'naylaputrimulia@gmail.com',
+    href: 'mailto:naylaputrimulia@gmail.com',
   },
   {
     icon: Phone,
     label: 'Telepon',
-    value: '+62 812 3456 7890',
-    href: 'tel:+6281234567890',
+    value: '+62 811 6851 184',
+    href: 'tel:+628116851184',
   },
   {
     icon: MapPin,
     label: 'Lokasi',
-    value: 'Jakarta, Indonesia',
+    value: 'Banda aceh, Indonesia',
     href: '#',
   },
 ];
