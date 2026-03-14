@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 const skills = {
   frontend: [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
+    { name: 'React', level: 90 },
+    { name: 'TypeScript', level: 95 },
     { name: 'Next.js', level: 88 },
-    { name: 'Tailwind CSS', level: 95 },
+    { name: 'Tailwind CSS', level: 100 },
     { name: 'Vue.js', level: 75 },
   ],
   backend: [
@@ -16,7 +16,7 @@ const skills = {
     { name: 'GraphQL', level: 78 },
   ],
   tools: [
-    { name: 'Git', level: 95 },
+    { name: 'Git', level: 100 },
     { name: 'Docker', level: 80 },
     { name: 'AWS', level: 75 },
     { name: 'Figma', level: 85 },

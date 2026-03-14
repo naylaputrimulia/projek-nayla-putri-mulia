@@ -5,8 +5,7 @@ export default function AboutSection() {
   const stats = [
     { icon: Code2, value: '50+', label: 'Projects Selesai' },
     { icon: Video, value: '100+', label: 'Video Konten' },
-    { icon: Coffee, value: '1000+', label: 'Cangkir Kopi' },
-    { icon: Rocket, value: '5+', label: 'Tahun Pengalaman' },
+    
   ];
 
   return (
@@ -59,12 +58,15 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <h3 className="font-display text-2xl md:text-3xl font-bold">
-              Passionate pelajar 
+              Passionate developer 
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Saya adalah seorang pelajar MAN 1 Banda aceh dengan passion yang kuat dalam menciptakan 
+              Saya adalah seorang pelajar MAN 1 Banda aceh yang memiliki passion yang kuat dalam menciptakan 
               solusi digital yang inovatif. Dengan pengalaman lebih dari 2 bulan, saya telah 
               membantu banyak teman saya yang kesusahan dalam tahap-tahap serta pembuatan coding.
+              saya tertarik dalam menggunakan teknologi dan komunikasi dalam suatu pemograman.
+              serta kemajuan teknologi dalam penggunaan AI. 
+              
             </p>
             
             <div className="grid grid-cols-2 gap-4 pt-4">
