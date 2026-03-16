@@ -12,9 +12,7 @@ export default function HeroSection() {
   };
 const socialLinks = [
     { icon: Github, href: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git', label: 'GitHub' },
-    // { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    // { icon: Youtube, href: '#', label: 'YouTube' },
-    // { icon: Instagram, href: '#', label: 'Instagram' },
+    
 ];
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
@@ -60,9 +58,9 @@ const socialLinks = [
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              Nayla Putri Mulia
+              hi!
               <br />
-              <span className="text-gradient">& Pemrograman </span>
+              <span className="text-gradient">i'm Nayla putri mulia </span>
             </motion.h1>
 
             <motion.p
@@ -107,10 +105,8 @@ const socialLinks = [
               className="flex items-center justify-center lg:justify-start gap-6"
             >
               {[
-                { icon: Github, href: '#', label: 'GitHub' },
-                { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Youtube, href: '#', label: 'YouTube' },
-                { icon: Instagram, href: '#', label: 'Instagram' },
+                { icon: Github, href: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git', label: 'GitHub' },
+                
               ].map((social) => (
                 <motion.a
                   key={social.label}
