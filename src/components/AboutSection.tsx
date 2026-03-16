@@ -37,7 +37,7 @@ export default function AboutSection() {
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                   {/* <span className="text-8xl">👨‍💻ffjm</span> */}
                     <img 
-                src="/public/foto kedua akun.jpg" // Ganti dengan path foto kamu di folder public
+                src="/foto kedua akun.jpg" // Ganti dengan path foto kamu di folder public
                 alt="Nayla Putri Mulia"
                 className="relative  object-coverborder-4 border-white/10 shadow-2xl"
               />
