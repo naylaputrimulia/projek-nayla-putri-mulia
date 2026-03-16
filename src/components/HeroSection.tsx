@@ -36,7 +36,7 @@ const socialLinks = [
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               
               <img 
-                src="/public/foto akun.webp" // Ganti dengan path foto kamu di folder public
+                src="/foto akun.webp" // Ganti dengan path foto kamu di folder public
                 alt="Nayla Putri Mulia"
                 className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white/10 shadow-2xl"
               />
