@@ -13,7 +13,7 @@ const projects = [
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
     image: '🛒',
     color: 'from-blue-500/20 to-cyan-500/20',
-    github: 'https://github.com/username/project', // Masukkan link asli di sini
+    github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git', // Masukkan link asli di sini
     demo: 'https://demo-link.com',
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
     image: '📚',
     color: 'from-purple-500/20 to-pink-500/20',
-    github: 'https://github.com/username/project',
+    github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git',
     demo: 'https://demo-link.com',
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
     image: '📊',
     color: 'from-orange-500/20 to-red-500/20',
-    github: 'https://github.com/username/project',
+    github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git',
     demo: 'https://demo-link.com',
   },
   {
@@ -40,7 +40,7 @@ const projects = [
     tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
     image: '🤖',
     color: 'from-green-500/20 to-teal-500/20',
-    github: 'https://github.com/username/project',
+    github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git',
     demo: 'https://demo-link.com',
   },
   {
