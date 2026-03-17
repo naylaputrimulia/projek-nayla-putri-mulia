@@ -46,7 +46,7 @@ const socialLinks = [
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              👋 Selamat datang di portfolio saya
+              👋 welcome to my portfolio 
             </motion.span>
           </motion.div>
 
