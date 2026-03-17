@@ -33,7 +33,7 @@ const contactInfo = [
     icon: MapPin,
     label: 'Lokasi',
     value: 'Banda aceh, Indonesia',
-    href: '#',
+    href: 'https://www.google.com/maps/search/?api=1&query=Banda+Aceh', // Sebaiknya tambahkan link maps asli
   },
 ];
 
@@ -75,7 +75,7 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
         body: formData,
       });
 
@@ -141,6 +141,10 @@ export default function ContactSection() {
                 <motion.a
                   key={info.label}
                   href={info.href}
+                  // --- PERUBAHAN DI SINI ---
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // ------------------------
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -152,7 +156,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
+                    <p className="font-medium group-hover:text-primary transition-colors">{info.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -167,11 +171,10 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6 p-6 glass rounded-2xl shadow-card">
+              {/* Grid Nama & Email */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Nama
-                  </label>
+                  <label htmlFor="name" className="text-sm font-medium">Nama</label>
                   <Input
                     id="name"
                     name="name"
@@ -180,14 +183,10 @@ export default function ContactSection() {
                     placeholder="Nama Anda"
                     className={errors.name ? 'border-destructive' : ''}
                   />
-                  {errors.name && (
-                    <p className="text-xs text-destructive">{errors.name}</p>
-                  )}
+                  {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
                   <Input
                     id="email"
                     name="email"
@@ -197,16 +196,13 @@ export default function ContactSection() {
                     placeholder="email@example.com"
                     className={errors.email ? 'border-destructive' : ''}
                   />
-                  {errors.email && (
-                    <p className="text-xs text-destructive">{errors.email}</p>
-                  )}
+                  {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
                 </div>
               </div>
 
+              {/* Subjek */}
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
-                  Subjek
-                </label>
+                <label htmlFor="subject" className="text-sm font-medium">Subjek</label>
                 <Input
                   id="subject"
                   name="subject"
@@ -215,15 +211,12 @@ export default function ContactSection() {
                   placeholder="Subjek pesan"
                   className={errors.subject ? 'border-destructive' : ''}
                 />
-                {errors.subject && (
-                  <p className="text-xs text-destructive">{errors.subject}</p>
-                )}
+                {errors.subject && <p className="text-xs text-destructive">{errors.subject}</p>}
               </div>
 
+              {/* Pesan */}
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Pesan
-                </label>
+                <label htmlFor="message" className="text-sm font-medium">Pesan</label>
                 <Textarea
                   id="message"
                   name="message"
@@ -233,9 +226,7 @@ export default function ContactSection() {
                   rows={5}
                   className={errors.message ? 'border-destructive' : ''}
                 />
-                {errors.message && (
-                  <p className="text-xs text-destructive">{errors.message}</p>
-                )}
+                {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
               </div>
 
               <Button
