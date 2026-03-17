@@ -5,7 +5,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Button } from '@/components/ui/button';
 
-
 // --- Data Projects ---
 const projects = [
   {
@@ -14,8 +13,8 @@ const projects = [
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
     image: '🛒',
     color: 'from-blue-500/20 to-cyan-500/20',
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/username/project', // Masukkan link asli di sini
+    demo: 'https://demo-link.com',
   },
   {
     title: 'Learning Management System',
@@ -23,8 +22,8 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
     image: '📚',
     color: 'from-purple-500/20 to-pink-500/20',
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/username/project',
+    demo: 'https://demo-link.com',
   },
   {
     title: 'Social Media Dashboard',
@@ -32,8 +31,8 @@ const projects = [
     tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
     image: '📊',
     color: 'from-orange-500/20 to-red-500/20',
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/username/project',
+    demo: 'https://demo-link.com',
   },
   {
     title: 'AI Content Generator',
@@ -41,8 +40,8 @@ const projects = [
     tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
     image: '🤖',
     color: 'from-green-500/20 to-teal-500/20',
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/username/project',
+    demo: 'https://demo-link.com',
   },
   {
     title: 'Video Editing Tutorial',
@@ -51,7 +50,7 @@ const projects = [
     image: '🎬',
     color: 'from-red-500/20 to-orange-500/20',
     isContent: true,
-    youtube: '#',
+    youtube: 'https://youtube.com/link-video',
   },
   {
     title: 'Coding Tips & Tricks',
@@ -60,7 +59,7 @@ const projects = [
     image: '💡',
     color: 'from-cyan-500/20 to-blue-500/20',
     isContent: true,
-    youtube: '#',
+    youtube: 'https://youtube.com/link-video',
   },
 ];
 
@@ -160,7 +159,8 @@ export default function ProjectsSection() {
                       <div className="flex gap-2 pt-4">
                         {project.github && !project.isContent && (
                           <Button variant="outline" size="sm" className="h-9 rounded-full px-4" asChild>
-                            <a href={project.github} target="_blank" rel="noreferrer">
+                            {/* TARGET BLANK DITERAPKAN DI SINI */}
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
                               <Github className="h-4 w-4 mr-2" />
                               Code
                             </a>
@@ -168,7 +168,8 @@ export default function ProjectsSection() {
                         )}
                         {project.demo && !project.isContent && (
                           <Button size="sm" className="h-9 rounded-full px-4" asChild>
-                            <a href={project.demo} target="_blank" rel="noreferrer">
+                            {/* TARGET BLANK DITERAPKAN DI SINI */}
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="h-4 w-4 mr-2" />
                               Demo
                             </a>
@@ -176,7 +177,8 @@ export default function ProjectsSection() {
                         )}
                         {project.isContent && (
                           <Button size="sm" className="h-9 rounded-full px-4 w-full" asChild>
-                            <a href={project.youtube} target="_blank" rel="noreferrer">
+                            {/* TARGET BLANK DITERAPKAN DI SINI */}
+                            <a href={project.youtube} target="_blank" rel="noopener noreferrer">
                               <Play className="h-4 w-4 mr-2" />
                               Watch Now
                             </a>
