@@ -1,69 +1,88 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { History, Plus, ChevronLeft, ChevronRight, Wallet, TrendingUp } from 'lucide-react';
+import { ExternalLink, Github, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Button } from '@/components/ui/button';
 
-// --- Data Awal Target Bank ---
-const INITIAL_TARGETS = [
+
+// --- Data Projects ---
+const projects = [
   {
-    id: 1,
-    title: 'MacBook Pro M3',
-    description: 'Tabungan untuk upgrade alat kerja demi produktivitas coding yang lebih gahar.',
-    targetAmount: 25000000,
-    currentAmount: 12500000,
-    image: '💻',
+    title: 'E-Commerce Platform',
+    description: 'Platform e-commerce modern dengan fitur lengkap termasuk payment gateway, inventory management, dan analytics dashboard.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+    image: '🛒',
     color: 'from-blue-500/20 to-cyan-500/20',
+    github: '#',
+    demo: '#',
   },
   {
-    id: 2,
-    title: 'Dana Darurat',
-    description: 'Simpanan wajib untuk keamanan finansial dan dana siaga jangka panjang.',
-    targetAmount: 15000000,
-    currentAmount: 13500000,
-    image: '🛡️',
-    color: 'from-emerald-500/20 to-teal-500/20',
+    title: 'Learning Management System',
+    description: 'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
+    tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
+    image: '📚',
+    color: 'from-purple-500/20 to-pink-500/20',
+    github: '#',
+    demo: '#',
   },
   {
-    id: 3,
-    title: 'Liburan ke Jepang',
-    description: 'Target refreshing dan self-reward setelah rilis proyek portofolio besar.',
-    targetAmount: 20000000,
-    currentAmount: 4000000,
-    image: '🌸',
-    color: 'from-pink-500/20 to-rose-500/20',
+    title: 'Social Media Dashboard',
+    description: 'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
+    tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
+    image: '📊',
+    color: 'from-orange-500/20 to-red-500/20',
+    github: '#',
+    demo: '#',
   },
   {
-    id: 4,
-    title: 'AI Content Server',
-    description: 'Membangun server lokal untuk menjalankan model AI language secara mandiri.',
-    targetAmount: 30000000,
-    currentAmount: 5000000,
+    title: 'AI Content Generator',
+    description: 'Tool untuk generate konten menggunakan AI dengan integrasi berbagai model language.',
+    tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
     image: '🤖',
     color: 'from-green-500/20 to-teal-500/20',
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Video Editing Tutorial',
+    description: 'Seri tutorial video editing dengan 100+ episode dan 10k+ subscribers.',
+    tags: ['Premiere Pro', 'After Effects', 'YouTube'],
+    image: '🎬',
+    color: 'from-red-500/20 to-orange-500/20',
+    isContent: true,
+    youtube: '#',
+  },
+  {
+    title: 'Coding Tips & Tricks',
+    description: 'Konten tips programming dan best practices untuk developer Indonesia.',
+    tags: ['Instagram', 'TikTok', 'YouTube Shorts'],
+    image: '💡',
+    color: 'from-cyan-500/20 to-blue-500/20',
+    isContent: true,
+    youtube: '#',
   },
 ];
 
-export default function BankSection() {
-  const [targets, setTargets] = useState(INITIAL_TARGETS);
-
-  // Fungsi Tambah Saldo (Simulasi +500rb per klik)
-  const handleTabung = (id) => {
-    setTargets(prev => prev.map(item => {
-      if (item.id === id && item.currentAmount < item.targetAmount) {
-        return { ...item, currentAmount: Math.min(item.currentAmount + 500000, item.targetAmount) };
-      }
-      return item;
-    }));
+export default function ProjectsSection() {
+  // Inisialisasi Autoplay
+  const autoplayOptions = {
+    delay: 3000,
+    stopOnInteraction: false,
+    stopOnMouseEnter: true,
   };
 
-  // Setup Embla Carousel
+  // Setup Embla
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'start' },
-    [Autoplay({ delay: 3000, stopOnMouseEnter: true })]
+    { 
+      loop: true, 
+      align: 'start',
+      dragFree: false 
+    }, 
+    [Autoplay(autoplayOptions)]
   );
 
+  // Fungsi Navigasi
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -73,7 +92,7 @@ export default function BankSection() {
   }, [emblaApi]);
 
   return (
-    <section id="bank-target" className="py-20 md:py-32 bg-muted/30 overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-4">
         
         {/* Header Section */}
@@ -84,12 +103,9 @@ export default function BankSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            <Wallet className="h-4 w-4" />
-            <span>Financial Goals</span>
-          </div>
+          <span className="text-primary font-medium mb-2 block">Portfolio</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Target Bank & Tabungan
+            Projects & Karya
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
@@ -97,80 +113,84 @@ export default function BankSection() {
         {/* Carousel Container */}
         <div className="relative max-w-7xl mx-auto group">
           
-          <div className="overflow-hidden cursor-grab active:cursor-grabbing px-2" ref={emblaRef}>
+          {/* Viewport Embla */}
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex -ml-4">
-              {targets.map((item) => {
-                const progress = (item.currentAmount / item.targetAmount) * 100;
-                
-                return (
-                  <div key={item.id} className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_50%] lg:flex-[0_0_33.33%]">
-                    <div className="h-full p-6 bg-background/50 backdrop-blur-sm border rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 mx-1 flex flex-col">
-                      
-                      {/* Image/Icon Area */}
-                      <div className={`aspect-video rounded-2xl mb-6 flex items-center justify-center bg-gradient-to-br ${item.color} relative overflow-hidden`}>
-                        <span className="text-6xl z-10">{item.image}</span>
-                        <TrendingUp className="absolute right-4 bottom-4 h-12 w-12 text-black/5 -rotate-12" />
+              {projects.map((project, index) => (
+                <div 
+                  key={index} 
+                  className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
+                >
+                  <div className="h-full p-6 bg-background/50 backdrop-blur-sm border rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 mx-1">
+                    {/* Image/Icon Area */}
+                    <div className={`aspect-video rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${project.color}`}>
+                      <span className="text-6xl">{project.image}</span>
+                    </div>
+                    
+                    {/* Content Area */}
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        {project.isContent && (
+                          <span className="px-2 py-0.5 text-[10px] uppercase tracking-wider rounded-full bg-primary/10 text-primary font-bold">
+                            Content
+                          </span>
+                        )}
+                        <h3 className="font-display text-lg font-bold group-hover:text-primary transition-colors line-clamp-1">
+                          {project.title}
+                        </h3>
                       </div>
                       
-                      {/* Content Area */}
-                      <div className="flex-grow space-y-4">
-                        <div className="flex justify-between items-start">
-                          <h3 className="font-display text-xl font-bold line-clamp-1">{item.title}</h3>
-                          <span className="text-xs font-bold px-2 py-1 rounded-lg bg-primary/10 text-primary">
-                            {progress.toFixed(0)}%
+                      <p className="text-sm text-muted-foreground line-clamp-2 min-h-[40px]">
+                        {project.description}
+                      </p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-1 text-[10px] rounded-md bg-secondary text-secondary-foreground font-medium"
+                          >
+                            {tag}
                           </span>
-                        </div>
-                        
-                        <p className="text-sm text-muted-foreground line-clamp-2 min-h-[40px]">
-                          {item.description}
-                        </p>
-                        
-                        {/* Progress Bar Visual */}
-                        <div className="space-y-2 pt-2">
-                          <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              animate={{ width: `${Math.min(progress, 100)}%` }}
-                              transition={{ duration: 0.8, ease: "easeOut" }}
-                              className="h-full bg-primary rounded-full"
-                            />
-                          </div>
-                          <div className="flex justify-between text-[11px] font-medium">
-                            <span className="text-foreground font-bold">Rp {item.currentAmount.toLocaleString('id-ID')}</span>
-                            <span className="text-muted-foreground tracking-tighter">Target: Rp {item.targetAmount.toLocaleString('id-ID')}</span>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                       
                       {/* Action Buttons */}
-                      <div className="flex gap-2 pt-6">
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="flex-1 h-10 rounded-xl"
-                          onClick={() => alert('Fitur riwayat segera hadir!')}
-                        >
-                          <History className="h-4 w-4 mr-2" />
-                          Riwayat
-                        </Button>
-                        <Button 
-                          size="sm" 
-                          className={`flex-1 h-10 rounded-xl shadow-lg transition-all ${progress >= 100 ? 'bg-green-500 hover:bg-green-600' : ''}`}
-                          onClick={() => handleTabung(item.id)}
-                          disabled={progress >= 100}
-                        >
-                          <Plus className="h-4 w-4 mr-2" />
-                          {progress >= 100 ? 'Tercapai' : 'Tabung'}
-                        </Button>
+                      <div className="flex gap-2 pt-4">
+                        {project.github && !project.isContent && (
+                          <Button variant="outline" size="sm" className="h-9 rounded-full px-4" asChild>
+                            <a href={project.github} target="_blank" rel="noreferrer">
+                              <Github className="h-4 w-4 mr-2" />
+                              Code
+                            </a>
+                          </Button>
+                        )}
+                        {project.demo && !project.isContent && (
+                          <Button size="sm" className="h-9 rounded-full px-4" asChild>
+                            <a href={project.demo} target="_blank" rel="noreferrer">
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              Demo
+                            </a>
+                          </Button>
+                        )}
+                        {project.isContent && (
+                          <Button size="sm" className="h-9 rounded-full px-4 w-full" asChild>
+                            <a href={project.youtube} target="_blank" rel="noreferrer">
+                              <Play className="h-4 w-4 mr-2" />
+                              Watch Now
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Navigation Buttons (Desktop) */}
+          {/* Navigation Buttons (Desktop Only) */}
           <button
             onClick={scrollPrev}
             className="absolute left-[-20px] top-1/2 -translate-y-1/2 bg-background border shadow-lg p-3 rounded-full hidden md:flex hover:bg-primary hover:text-white transition-colors z-10"
