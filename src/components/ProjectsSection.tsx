@@ -129,7 +129,11 @@ export default function ProjectsSection() {
                   <div className="h-full p-6 bg-background/50 backdrop-blur-sm border rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 mx-1">
                     {/* Image/Icon Area */}
                     <div className={`aspect-video rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${project.color}`}>
-                      <span className="text-6xl">{project.image}</span>
+                      <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      />
                     </div>
                     
                     {/* Content Area */}
