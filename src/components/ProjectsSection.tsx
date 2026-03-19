@@ -1,4 +1,10 @@
 import React, { useCallback } from 'react';
+import art  from '../assets/art circle.png'
+import kucing from '../assets/kucing.png'
+import life from '../assets/life.jpg'
+import balon from '../assets/balon .webp'
+import kacamata from '../assets/kacamata.webp'
+import kucing2 from '../assets/kucing jendela.gif'
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -11,7 +17,7 @@ const projects = [
     title: 'E-Commerce Platform',
     description: 'Platform e-commerce modern dengan fitur lengkap termasuk payment gateway, inventory management, dan analytics dashboard.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-    image: '🛒',
+    image: art,
     color: 'from-blue-500/20 to-cyan-500/20',
     github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git', // Masukkan link asli di sini
     demo: 'https://demo-link.com',
@@ -20,7 +26,7 @@ const projects = [
     title: 'Learning Management System',
     description: 'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
-    image: '📚',
+    image: kucing,
     color: 'from-purple-500/20 to-pink-500/20',
     github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git',
     demo: 'https://demo-link.com',
@@ -29,7 +35,7 @@ const projects = [
     title: 'Social Media Dashboard',
     description: 'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
     tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
-    image: '📊',
+    image: life,
     color: 'from-orange-500/20 to-red-500/20',
     github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git',
     demo: 'https://demo-link.com',
@@ -38,7 +44,7 @@ const projects = [
     title: 'AI Content Generator',
     description: 'Tool untuk generate konten menggunakan AI dengan integrasi berbagai model language.',
     tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
-    image: '🤖',
+    image: balon,
     color: 'from-green-500/20 to-teal-500/20',
     github: 'https://github.com/naylaputrimulia/projek-nayla-putri-mulia.git',
     demo: 'https://demo-link.com',
@@ -47,7 +53,7 @@ const projects = [
     title: 'Video Editing Tutorial',
     description: 'Seri tutorial video editing dengan 100+ episode dan 10k+ subscribers.',
     tags: ['Premiere Pro', 'After Effects', 'YouTube'],
-    image: '🎬',
+    image: kacamata,
     color: 'from-red-500/20 to-orange-500/20',
     isContent: true,
     youtube: 'https://youtube.com/link-video',
@@ -56,7 +62,7 @@ const projects = [
     title: 'Coding Tips & Tricks',
     description: 'Konten tips programming dan best practices untuk developer Indonesia.',
     tags: ['Instagram', 'TikTok', 'YouTube Shorts'],
-    image: '💡',
+    image: kucing2,
     color: 'from-cyan-500/20 to-blue-500/20',
     isContent: true,
     youtube: 'https://youtube.com/link-video',
